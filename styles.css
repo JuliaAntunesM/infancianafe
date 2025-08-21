@@ -282,31 +282,25 @@ body::before {
 }
 
 .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .hero-text {
-    flex: 1;
-    text-align: left;
-    max-width: 600px;
+    text-align: center;
 }
 
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: center;
 }
 
 .hero-img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -1653,13 +1647,11 @@ html {
 
 /* Responsive Hero */
 @media (max-width: 992px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
+    .hero-image {
+        max-width: 400px;
     }
     
-    .hero-text {
-        text-align: center;
+    .hero-img {
         max-width: 100%;
     }
     
@@ -1675,11 +1667,11 @@ html {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 120px 0 60px;
+        padding: 100px 0 50px;
     }
     
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .hero h1::after {
@@ -1693,7 +1685,8 @@ html {
     }
     
     .hero-image {
-        margin-top: 2rem;
+        margin: 1.5rem auto;
+        max-width: 300px;
     }
     
     .hero-subtitle {
