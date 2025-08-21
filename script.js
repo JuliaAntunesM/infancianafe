@@ -261,48 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viewCountElement.textContent = viewCount;
     }
 
-    // Adiciona funcionalidade de notificação de estoque baixo
-    function checkStock() {
-        const stockWarning = document.createElement('div');
-        stockWarning.className = 'stock-warning';
-        stockWarning.innerHTML = `
-            <i class="fas fa-exclamation-triangle"></i>
-            <span>Últimas unidades disponíveis! Não perca esta oportunidade!</span>
-        `;
-        stockWarning.style.cssText = `
-            position: fixed;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            z-index: 999;
-            animation: slideInDown 0.5s ease;
-        `;
-        
-        document.body.appendChild(stockWarning);
-        
-        // Remove a notificação após 5 segundos
-        setTimeout(() => {
-            stockWarning.style.animation = 'slideOutUp 0.5s ease';
-            setTimeout(() => {
-                if (stockWarning.parentNode) {
-                    stockWarning.parentNode.removeChild(stockWarning);
-                }
-            }, 500);
-        }, 5000);
-    }
-    
-    // Mostra aviso de estoque após 10 segundos
-    setTimeout(checkStock, 10000);
+    // Função de notificação de estoque baixo removida
 
     // Adiciona CSS para animações
     const style = document.createElement('style');
