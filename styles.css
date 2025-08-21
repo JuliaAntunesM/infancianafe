@@ -311,14 +311,14 @@ body::before {
     transform: scale(1.05) rotate(5deg);
 }
 
-/* Modern Benefits Section */
-.benefits {
+/* Modern Benefits & Pricing Section */
+.benefits-pricing {
     padding: 80px 0;
     background: white;
     position: relative;
 }
 
-.benefits::before {
+.benefits-pricing::before {
     content: '';
     position: absolute;
     top: 0;
@@ -328,7 +328,7 @@ body::before {
     background: linear-gradient(to bottom, transparent, white);
 }
 
-.benefits h2 {
+.benefits-pricing h2 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 800;
@@ -337,7 +337,7 @@ body::before {
     position: relative;
 }
 
-.benefits h2::after {
+.benefits-pricing h2::after {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -349,116 +349,49 @@ body::before {
     border-radius: 2px;
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.benefit-card {
-    background: white;
+.pricing-section {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 2.5rem;
     border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-.benefit-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-primary);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.benefit-card:hover::before {
-    transform: scaleX(1);
-}
-
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-.benefit-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-secondary);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-}
-
-.benefit-icon i {
-    font-size: 2rem;
-    color: var(--accent-orange);
-}
-
-.benefit-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-}
-
-.benefit-card p {
-    color: var(--text-light);
-    line-height: 1.6;
-}
-
-/* Modern Product Section */
-.product {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    position: relative;
-}
-
-.product h2 {
+.pricing-section h3 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--text-dark);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     position: relative;
 }
 
-.product h2::after {
+.pricing-section h3::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
+    width: 60px;
+    height: 3px;
     background: var(--gradient-primary);
     border-radius: 2px;
 }
 
-/* Modern Pricing Plans */
 .pricing-plans {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .pricing-plan {
     background: white;
-    border-radius: 25px;
-    padding: 2.5rem;
+    border-radius: 20px;
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border: 2px solid transparent;
     transition: all 0.3s ease;
     position: relative;
@@ -471,7 +404,7 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: var(--gradient-primary);
     transform: scaleX(0);
     transition: transform 0.3s ease;
@@ -482,115 +415,117 @@ body::before {
 }
 
 .pricing-plan:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     border-color: var(--accent-orange);
 }
 
 .pricing-plan.featured {
     border-color: var(--accent-orange);
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .pricing-plan.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+    transform: scale(1.02) translateY(-5px);
 }
 
 .plan-badge {
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: -12px;
+    right: -12px;
     background: var(--gradient-accent);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 700;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
     animation: bounce 2s infinite;
 }
 
-.plan-header h3 {
+.plan-header h4 {
     color: var(--text-dark);
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
     font-weight: 800;
 }
 
 .plan-price {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
 }
 
 .plan-price .currency {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-dark);
     font-weight: 700;
 }
 
 .plan-price .amount {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--accent-orange);
     font-weight: 900;
     line-height: 1;
 }
 
 .plan-price .period {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-dark);
     font-weight: 700;
 }
 
 .plan-image {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     text-align: center;
 }
 
 .plan-product-photo {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    border: 4px solid var(--warm-yellow);
+    border: 3px solid var(--warm-yellow);
 }
 
 .plan-product-photo:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-color: var(--accent-orange);
 }
 
 .plan-features ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 2rem 0;
+    margin: 0 0 1.5rem 0;
     text-align: left;
 }
 
 .plan-features li {
-    padding: 0.75rem 0;
+    padding: 0.6rem 0;
     color: var(--text-dark);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     font-weight: 500;
 }
 
 .plan-features li i {
     color: var(--accent-orange);
-    font-size: 1.1rem;
-    min-width: 24px;
+    font-size: 1rem;
+    min-width: 20px;
 }
 
 .pricing-plan .btn {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
 }
 
 /* Modern Product Gallery */
@@ -1168,90 +1103,178 @@ html {
     box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .pricing-plans {
-        grid-template-columns: 1fr;
+/* Modern Benefits & Gallery Section */
+.benefits-gallery {
+    padding: 80px 0;
+    background: white;
+    position: relative;
+}
+
+.benefits-gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+.benefits-gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.benefits-gallery h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-image {
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-photo {
+    transform: scale(1.05);
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-secondary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.benefit-icon i {
+    font-size: 2rem;
+    color: var(--accent-orange);
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Responsive Design for Benefits & Gallery */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
-    
-    .pricing-plan.featured {
-        transform: none;
-    }
-    
-    .pricing-plan.featured:hover {
-        transform: translateY(-10px);
-    }
-    
+}
+
+@media (max-width: 768px) {
     .benefits-grid {
         grid-template-columns: 1fr;
     }
     
-    .testimonials-grid {
-        grid-template-columns: 1fr;
+    .benefit-card {
+        padding: 1.5rem;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .benefit-photo {
+        height: 180px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
+    .benefits-gallery {
+        padding: 60px 0;
     }
     
-    .hero {
-        padding: 100px 0 60px;
-    }
-    
-    .hero h1 {
+    .benefits-gallery h2 {
         font-size: 2rem;
     }
     
-    .hero-features {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing-plan {
-        padding: 2rem;
-    }
-    
-    .plan-price .amount {
-        font-size: 3rem;
-    }
-    
-    .plan-header h3 {
-        font-size: 1.5rem;
-    }
-    
-    .plan-product-photo {
-        width: 120px;
-        height: 120px;
-    }
-    
     .benefit-card {
-        padding: 2rem;
-    }
-    
-    .testimonial-card {
         padding: 1.5rem;
     }
     
-    .faq-question {
-        padding: 1.25rem;
+    .benefit-photo {
+        height: 160px;
     }
     
-    .faq-question h4 {
-        font-size: 1rem;
+    .benefit-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .benefit-icon i {
+        font-size: 1.75rem;
     }
 }
 
@@ -1270,3 +1293,222 @@ html {
 .testimonial-card:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.2s both; }
 .testimonial-card:nth-child(3) { animation: fadeInUp 0.6s ease-out 0.3s both; }
 .testimonial-card:nth-child(4) { animation: fadeInUp 0.6s ease-out 0.4s both; }
+
+/* Modern Pricing Section */
+.pricing {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+}
+
+.pricing h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.pricing h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-plan {
+    background: white;
+    border-radius: 25px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-plan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover::before {
+    transform: scaleX(1);
+}
+
+.pricing-plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-orange);
+}
+
+.pricing-plan.featured {
+    border-color: var(--accent-orange);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-plan.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--gradient-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    animation: bounce 2s infinite;
+}
+
+.plan-header h3 {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.plan-price {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.plan-price .currency {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.plan-price .amount {
+    font-size: 4rem;
+    color: var(--accent-orange);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.plan-price .period {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.plan-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.plan-product-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 4px solid var(--warm-yellow);
+}
+
+.plan-product-photo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-orange);
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+}
+
+.plan-features li {
+    padding: 0.75rem 0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.plan-features li i {
+    color: var(--accent-orange);
+    font-size: 1.1rem;
+    min-width: 24px;
+}
+
+.pricing-plan .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Responsive Design for Pricing */
+@media (max-width: 768px) {
+    .pricing-plans {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pricing-plan.featured {
+        transform: none;
+    }
+    
+    .pricing-plan.featured:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing {
+        padding: 60px 0;
+    }
+    
+    .pricing h2 {
+        font-size: 2rem;
+    }
+    
+    .pricing-plan {
+        padding: 2rem;
+    }
+    
+    .plan-price .amount {
+        font-size: 3rem;
+    }
+    
+    .plan-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .plan-product-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
