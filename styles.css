@@ -122,55 +122,131 @@ body::before {
     font-weight: 700;
 }
 
-/* Modern Header */
+/* Header Styles */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
     z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    align-items: center;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-dark);
     text-decoration: none;
 }
 
-.logo-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 3px solid var(--warm-yellow);
 }
 
-.logo-image:hover {
-    transform: scale(1.1) rotate(5deg);
+.logo-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+    border-color: var(--accent-orange);
 }
 
-.header-cta .btn {
-    animation: pulse 2s infinite;
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.nav a:hover::before {
+    left: 0;
+}
+
+.nav a:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav {
+        gap: 1rem;
+    }
+    
+    .nav a {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logo span {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    
+    .nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Modern Hero Section */
@@ -342,37 +418,7 @@ body::before {
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
-.book-preview {
-    position: relative;
-    display: inline-block;
-    margin-top: 3rem;
-}
 
-.book-logo {
-    width: 250px;
-    height: 250px;
-    border-radius: 30px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
-    animation: float 8s ease-in-out infinite;
-    border: 5px solid var(--warm-yellow);
-    filter: drop-shadow(0 10px 20px rgba(255, 140, 0, 0.3));
-}
-
-.book-logo:hover {
-    transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent-orange);
-}
-
-.book-cover span {
-    display: block;
-    margin-top: 1rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--accent-orange);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 /* Modern Benefits & Pricing Section */
 .benefits-pricing {
