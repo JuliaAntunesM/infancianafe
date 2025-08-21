@@ -1221,7 +1221,7 @@ html {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    text-align: center;
+        text-align: center;
 }
 
 .benefit-card::before {
@@ -1277,7 +1277,7 @@ html {
 }
 
 .benefit-icon i {
-    font-size: 2rem;
+        font-size: 2rem;
     color: var(--accent-orange);
 }
 
@@ -1291,9 +1291,9 @@ html {
 .benefit-card p {
     color: var(--text-light);
     line-height: 1.6;
-    font-size: 1rem;
-}
-
+        font-size: 1rem;
+    }
+    
 /* Responsive Design for Benefits & Gallery */
 @media (max-width: 1024px) {
     .benefits-grid {
@@ -1367,7 +1367,7 @@ html {
 }
 
 .pricing h2 {
-    text-align: center;
+        text-align: center;
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--text-dark);
@@ -1464,7 +1464,7 @@ html {
     margin-bottom: 2rem;
     display: flex;
     align-items: baseline;
-    justify-content: center;
+        justify-content: center;
     gap: 0.3rem;
 }
 
