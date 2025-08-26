@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigada pela sua compra! - Infância na Fé</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../logo/Logo.png" alt="Infância na Fé" class="logo-img">
+                <span>Infância na Fé</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Obrigada -->
+    <section class="hero" style="padding: 140px 0 60px;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 900px;">
+                <div class="hero-text">
+                    <div class="price-note" style="margin-bottom: 1.25rem;">
+                        <i class="fas fa-check-circle"></i>
+                        Pagamento confirmado
+                    </div>
+                    <h1 style="max-width: 900px;">Muito obrigada pela sua compra! Deus abençoe sua família</h1>
+                    <p class="hero-subtitle" style="max-width: 800px;">
+                        "Deixem vir a mim as crianças e não as impeçam; pois o Reino dos céus pertence aos que são semelhantes a elas." (Mateus 19:14)
+                    </p>
+
+                    <div class="hero-image" style="margin-top: 2rem;">
+                        <img src="../fotos-do-produto/9.webp" alt="Crianças aprendendo sobre a Bíblia" class="hero-img">
+                    </div>
+
+                    <div class="hero-features" style="justify-content: center; margin-top: 2rem;">
+                        <div class="feature">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Seu PDF está pronto para download</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-print"></i>
+                            <span>Imprima quando quiser</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Momentos de fé em família</span>
+                        </div>
+                    </div>
+
+                    <a href="100desenhos.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-primary btn-large" style="margin-top: 1rem;">
+                        <i class="fas fa-download"></i>
+                        Baixar Desenhos Agora
+                    </a>
+
+                    <p class="hero-subtitle" style="margin-top: 1rem;">
+                        Se o download não iniciar automaticamente, <a href="100desenhos.pdf">clique aqui</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta" style="padding: 50px 0;">
+        <div class="container">
+            <h2>Que Jesus ilumine cada traço e cada coração</h2>
+            <p>Obrigado por apoiar este projeto. Que estes desenhos sejam sementes de amor e fé nas mãos das crianças. Se precisar de ajuda, conte conosco!</p>
+            <a href="100desenhos.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-secondary btn-large">
+                <i class="fas fa-redo"></i>
+                Baixar Novamente
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Infância na Fé</h4>
+                    <p>Livros de colorir que inspiram fé e criatividade nas crianças</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-envelope"></i> contato@infanciadenafe.com.br</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Infância na Fé. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Dispara o download automaticamente ao carregar a página
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('100desenhos.pdf');
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '100 Desenhos - Infância na Fé.pdf';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 1500);
+            } catch (err) {
+                console.error('Falha no download automático:', err);
+                // Fallback: manter a experiência com o link manual já presente na página
+            }
+        });
+    </script>
+</body>
+</html>
