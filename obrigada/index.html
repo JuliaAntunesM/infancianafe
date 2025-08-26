@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Obrigada pela sua compra! - Infância na Fé</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -52,13 +55,13 @@
                         </div>
                     </div>
 
-                    <a href="desenhos100.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-primary btn-large" style="margin-top: 1rem;">
+                    <a href="#" class="btn btn-primary btn-large download-link" data-file="desenhos100.pdf" data-name="100 Desenhos - Infância na Fé.pdf" style="margin-top: 1rem;">
                         <i class="fas fa-download"></i>
                         Baixar Desenhos Agora
                     </a>
 
                     <p class="hero-subtitle" style="margin-top: 1rem;">
-                        Se o download não iniciar automaticamente, <a href="desenhos100.pdf">clique aqui</a>.
+                        Se o download não iniciar automaticamente, <a href="#" class="download-link" data-file="desenhos100.pdf" data-name="100 Desenhos - Infância na Fé.pdf">clique aqui</a>.
                     </p>
                 </div>
             </div>
@@ -70,7 +73,7 @@
         <div class="container">
             <h2>Que Jesus ilumine cada traço e cada coração</h2>
             <p>Obrigado por apoiar este projeto. Que estes desenhos sejam sementes de amor e fé nas mãos das crianças. Se precisar de ajuda, conte conosco!</p>
-            <a href="desenhos100.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-secondary btn-large">
+            <a href="#" class="btn btn-secondary btn-large download-link" data-file="desenhos100.pdf" data-name="100 Desenhos - Infância na Fé.pdf">
                 <i class="fas fa-redo"></i>
                 Baixar Novamente
             </a>
@@ -103,5 +106,35 @@
             </div>
         </div>
     </footer>
+    <script>
+      // Baixa o PDF somente quando o usuário clica
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.download-link');
+        links.forEach(link => {
+          link.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const file = link.getAttribute('data-file') || 'desenhos100.pdf';
+            const name = link.getAttribute('data-name') || '100 Desenhos - Infância na Fé.pdf';
+            try {
+              const resp = await fetch(file, { cache: 'no-store' });
+              if (!resp.ok) throw new Error('HTTP ' + resp.status);
+              const blob = await resp.blob();
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = name;
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+              setTimeout(() => URL.revokeObjectURL(url), 1500);
+            } catch (err) {
+              // Fallback: navega direto para o arquivo
+              window.location.href = file;
+            }
+          });
+        });
+      });
+    </script>
 </body>
 </html>
