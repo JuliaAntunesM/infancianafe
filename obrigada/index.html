@@ -103,27 +103,5 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Dispara o download automaticamente ao carregar a página
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const response = await fetch('desenhos100.pdf');
-                if (!response.ok) throw new Error('HTTP ' + response.status);
-                const blob = await response.blob();
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = '100 Desenhos - Infância na Fé.pdf';
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                setTimeout(() => URL.revokeObjectURL(url), 1500);
-            } catch (err) {
-                console.error('Falha no download automático:', err);
-                // Fallback: manter a experiência com o link manual já presente na página
-            }
-        });
-    </script>
 </body>
 </html>
