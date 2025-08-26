@@ -52,13 +52,13 @@
                         </div>
                     </div>
 
-                    <a href="100desenhos.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-primary btn-large" style="margin-top: 1rem;">
+                    <a href="desenhos100.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-primary btn-large" style="margin-top: 1rem;">
                         <i class="fas fa-download"></i>
                         Baixar Desenhos Agora
                     </a>
 
                     <p class="hero-subtitle" style="margin-top: 1rem;">
-                        Se o download não iniciar automaticamente, <a href="100desenhos.pdf">clique aqui</a>.
+                        Se o download não iniciar automaticamente, <a href="desenhos100.pdf">clique aqui</a>.
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
         <div class="container">
             <h2>Que Jesus ilumine cada traço e cada coração</h2>
             <p>Obrigado por apoiar este projeto. Que estes desenhos sejam sementes de amor e fé nas mãos das crianças. Se precisar de ajuda, conte conosco!</p>
-            <a href="100desenhos.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-secondary btn-large">
+            <a href="desenhos100.pdf" download="100 Desenhos - Infância na Fé.pdf" class="btn btn-secondary btn-large">
                 <i class="fas fa-redo"></i>
                 Baixar Novamente
             </a>
@@ -107,7 +107,7 @@
         // Dispara o download automaticamente ao carregar a página
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const response = await fetch('100desenhos.pdf');
+                const response = await fetch('desenhos100.pdf');
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 const blob = await response.blob();
                 const url = URL.createObjectURL(blob);
