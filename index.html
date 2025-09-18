@@ -1,376 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4994250130799213');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=4994250130799213&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infância na Fé - Livros de Colorir para Crianças</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>LarComDeus - Produtos para o seu lar</title>
+    <meta name="description" content="Encontre os melhores produtos para sua casa na LarComDeus." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo/Logo.png" alt="Infância na Fé" class="logo-img">
-                <span>Infância na Fé</span>
-            </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="brand" aria-label="LarComDeus - Início">
+                <img src="Logo.png" alt="Logo LarComDeus" class="brand-logo" loading="eager" />
+                <div class="brand-text">
+                    <span class="brand-name">Lar com Deus</span>
+                    <span class="brand-tagline">Produtos para o seu lar</span>
+                </div>
+            </a>
+            <!-- Se desejar, no futuro podemos ativar uma navegação aqui -->
+            <!-- <nav class="site-nav">
+                <a href="#produtos">Produtos</a>
+                <a href="#contato">Contato</a>
+            </nav> -->
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transforme o Tempo das Telas em Momentos de Fé</h1>
-                    <p class="hero-subtitle">Nossos desenhos em PDF são perfeitos para imprimir e deixar as crianças colorindo enquanto aprendem sobre Deus.</p>
-                    
-                    <div class="hero-image">
-                        <img src="fotos-do-produto/9.webp" alt="Crianças aprendendo sobre a Bíblia" class="hero-img">
-                    </div>
-                    
-                    <div class="hero-features">
-                        <div class="feature">
-                            <i class="fas fa-palette"></i>
-                            <span>Desenhos para Colorir</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-heart"></i>
-                            <span>Histórias Bíblicas</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-download"></i>
-                            <span>Download Imediato</span>
-                        </div>
-                    </div>
-                </div>
+    <main class="container">
+        <section class="products-section">
+            <nav class="rooms-nav" aria-label="Categorias de cômodos">
+                <ul id="roomsList" class="rooms-list" role="tablist"></ul>
+            </nav>
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div id="gridNew" class="products-grid"></div>
+            <div id="emptyState" class="empty" hidden>
+                <p>Nenhum produto encontrado.</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Benefits & Gallery Section -->
-    <section class="benefits-gallery">
+    <footer class="site-footer">
         <div class="container">
-            <h2>Por que escolher Infância na Fé? 🌟</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/1.jpeg" alt="Desenhos em PDF" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Desenhos em PDF</h3>
-                    <p>Baixe e imprima quantas páginas quiser! Desenhos lindos e educativos para as crianças colorirem.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/2.webp" alt="Fácil de Imprimir" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h3>Fácil de Imprimir</h3>
-                    <p>Formato PDF otimizado para impressão em qualquer impressora. Ideal para uso doméstico e escolar.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/3.jpeg" alt="Download Imediato" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <h3>Download Imediato</h3>
-                    <p>Receba o arquivo PDF instantaneamente após a compra. Comece a imprimir e colorir em minutos!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/4.jpeg" alt="Para Todas as Idades" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3>Para Todas as Idades</h3>
-                    <p>Desenhos adaptados para diferentes níveis de habilidade, desde os menores até os mais experientes.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/5.jpeg" alt="Histórias Bíblicas" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-pray"></i>
-                    </div>
-                    <h3>Histórias Bíblicas</h3>
-                    <p>Cada desenho conta uma história da Bíblia, ensinando valores cristãos enquanto as crianças se divertem.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="fotos-do-produto/6.jpeg" alt="Atividade Familiar" class="benefit-photo">
-                    </div>
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Atividade Familiar</h3>
-                    <p>Perfeito para momentos em família. Imprima várias páginas e todos podem colorir juntos!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="comprar">
-        <div class="container">
-            <h2>Escolha Seu Plano</h2>
-            <div class="pricing-plans">
-                <div class="pricing-plan">
-                    <div class="plan-header">
-                        <h3>Plano Básico</h3>
-                        <div class="plan-price">
-                            <span class="currency">R$</span>
-                            <span class="amount">29</span>
-                            <span class="period">,99</span>
-                        </div>
-                    </div>
-                    <div class="plan-image">
-                        <img src="plano29,99/29,99.png" alt="Caderno de Colorir - 50 páginas" class="plan-product-photo">
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 50 páginas para colorir em PDF</li>
-                        </ul>
-                    </div>
-                    <a href="https://lastlink.com/p/CEE2940E7/checkout-payment/" class="btn btn-primary btn-large">Comprar Agora</a>
-                </div>
-
-                <div class="pricing-plan featured">
-                    <div class="plan-badge">Mais Popular</div>
-                    <div class="plan-header">
-                        <h3>Plano Completo</h3>
-                        <div class="plan-price">
-                            <span class="currency">R$</span>
-                            <span class="amount">39</span>
-                            <span class="period">,99</span>
-                        </div>
-                    </div>
-                    <div class="plan-image">
-                        <img src="plano39,99/39,99.jpg" alt="Caderno de Colorir - 100 páginas" class="plan-product-photo">
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 100 páginas para colorir em PDF</li>
-                        </ul>
-                    </div>
-                    <a href="https://lastlink.com/p/C5AC5142E/checkout-payment/" class="btn btn-primary btn-large">Comprar Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>O que as mães que compraram estão dizendo 💝</h2>
-            <p class="testimonials-subtitle">Depoimentos reais de famílias que transformaram o tempo de tela em momentos de fé</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="foto-self-maes-que-compraram/1.jpg" alt="Mãe que comprou" class="avatar-photo">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Ana Paula</h4>
-                            <p>Mãe de João, 4 anos</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Meu filho passava horas no celular. Agora ele adora colorir as histórias da Bíblia! É incrível ver como ele se concentra e aprende sobre Jesus!"</p>
-                    <div class="testimonial-tag">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Menos Telas</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="foto-self-maes-que-compraram/2.webp" alt="Mãe que comprou" class="avatar-photo">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Mariana Costa</h4>
-                            <p>Mãe de Sofia, 6 anos</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Baixei o PDF e imprimi várias páginas para minha filha. Ela fica horas colorindo e aprendendo sobre Jesus. O formato digital é super prático!"</p>
-                    <div class="testimonial-tag">
-                        <i class="fas fa-download"></i>
-                        <span>Fácil de Imprimir</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="foto-self-maes-que-compraram/4.jpg" alt="Mãe que comprou" class="avatar-photo">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Fernanda Silva</h4>
-                            <p>Mãe de Pedro, 7 anos</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Qualidade excepcional! As ilustrações são lindas e as histórias são perfeitas para a idade do meu filho. Ele pede para colorir todos os dias!"</p>
-                    <div class="testimonial-tag">
-                        <i class="fas fa-palette"></i>
-                        <span>Qualidade Superior</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card featured-testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <img src="foto-self-maes-que-compraram/5.gif" alt="Avó que comprou" class="avatar-photo">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Dona Maria</h4>
-                            <p>Avó de Lucas, 5 anos</p>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Como avó, vejo a diferença que fez na vida do meu netinho. Ele está mais calmo, focado e interessado em aprender sobre Deus. Valeu cada centavo!"</p>
-                    <div class="testimonial-tag">
-                        <i class="fas fa-heart"></i>
-                        <span>Amor de Avó</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Onde vou receber o PDF?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Assim que sua compra for aprovada, você será redirecionado automaticamente para baixar o PDF. Além disso, enviaremos o arquivo imediatamente para o seu e-mail cadastrado e também para o seu WhatsApp, garantindo que você receba por múltiplos canais e possa acessar de qualquer dispositivo, a qualquer momento.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Posso imprimir os desenhos em qualquer impressora?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! Nossos desenhos são otimizados para impressão em qualquer tipo de impressora, seja a laser ou jato de tinta. Eles também podem ser impressos em papelarias, caso prefira. As imagens estão em alta resolução e em formato A4 padrão, garantindo ótima qualidade em qualquer impressão.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Os desenhos possuem alguma religião específica?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nossos desenhos são criados para todas as famílias cristãs que desejam ensinar os valores e ensinamentos de Jesus Cristo às crianças. Não estamos vinculados a nenhuma denominação específica, mas sim à mensagem universal do Evangelho, sendo apropriados para qualquer família que deseje cultivar a fé cristã em seus filhos.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Posso imprimir mais de uma vez o mesmo desenho?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Com certeza! Uma das grandes vantagens dos nossos materiais é que você pode imprimir quantas cópias desejar, quantas vezes quiser. Isso é especialmente útil quando seu filho adora um desenho específico e quer colori-lo novamente, ou quando você deseja usar o mesmo material com irmãos mais novos ou em aulas bíblicas. O arquivo é seu para sempre!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Pronto para Transformar o Tempo das Telas?</h2>
-            <p>Baixe nossos desenhos em PDF e comece a imprimir hoje mesmo! Transforme momentos de tela em atividades criativas e educativas para seus filhos.</p>
-            <a href="#comprar" class="btn btn-primary btn-large">Começar a Colorir Hoje</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Infância na Fé</h4>
-                    <p>Livros de colorir que inspiram fé e criatividade nas crianças</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-envelope"></i> contato@infanciadenafe.com.br</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Infância na Fé. Todos os direitos reservados.</p>
-            </div>
+            <p>© <span id="year"></span> LarComDeus. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Adiciona manipulador global de erros
+        window.addEventListener('error', function(e) {
+            console.error('Erro global:', e.message, 'em', e.filename, 'linha', e.lineno);
+            return false;
+        });
+        
+        // Adiciona manipulador para erros de promise não tratados
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('Erro de promise não tratada:', e.reason);
+        });
+        
+        console.log('Script de inicialização carregado');
+    </script>
+    
+    <!-- Carrega o script principal -->
+    <script src="script.js" defer></script>
 </body>
 </html>
+
